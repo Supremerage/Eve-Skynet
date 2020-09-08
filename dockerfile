@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1.302-alpine3.12 AS build-env
 RUN apk add --no-cache tzdata
 
 WORKDIR /app
-COPY ./Eve-Skynet/*.csproj .
+COPY ./*/*.csproj .
 RUN dotnet restore 
 COPY ./Eve-Skynet .
 RUN dotnet publish -o out
