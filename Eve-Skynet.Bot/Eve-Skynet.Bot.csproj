@@ -30,13 +30,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="config\appsettings.defs.json">
+    <None Update="Config\appsettings.defs.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="config\appsettings.Development.json">
+    <None Update="Config\appsettings.Development.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="config\appsettings.json">
+    <None Update="Config\appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
