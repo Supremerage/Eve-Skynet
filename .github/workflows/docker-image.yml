@@ -15,4 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file dockerfile --tag eve-skynet:$(date +%s)
+      run: docker build . --file dockerfile --tag eve-skynet:$GITHUB_SHA
+    - name: Publish the docker image
+      run: |
+        echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+        docker tag eve-skynet:$GITHUB_SHA ghcr.io/supremerage/eve-skynet:$GITHUB_SHA
+        docker push ghcr.io/supremerage/eve-skynet:$GITHUB_SHA
+        
+        
